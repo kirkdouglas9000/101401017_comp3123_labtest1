@@ -1,4 +1,3 @@
-// Function to filter non-strings and convert remaining words to lowercase
 const lowerCaseWords = (mixedArray) => {
   return new Promise((resolve, reject) => {
     if (!Array.isArray(mixedArray)) {
@@ -6,8 +5,8 @@ const lowerCaseWords = (mixedArray) => {
     } else {
       try {
         const filtered = mixedArray
-          .filter(item => typeof item === "string")  // keep only strings
-          .map(word => word.toLowerCase());         // convert to lowercase
+          .filter(item => typeof item === "string")  
+          .map(word => word.toLowerCase());         
         resolve(filtered);
       } catch (error) {
         reject(error);
@@ -15,8 +14,6 @@ const lowerCaseWords = (mixedArray) => {
     }
   });
 };
-
-
 const mixedArray = ['PIZZA', 10, true, 25, false, 'Wings'];
 
 lowerCaseWords(mixedArray)
